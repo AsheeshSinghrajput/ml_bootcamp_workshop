@@ -22,4 +22,4 @@
 
 2. **build-push-package:**
 - Depends on integration.
-- Build Docker image, push to Docker Hub.
+- Build Docker image and push to Docker Hub.
