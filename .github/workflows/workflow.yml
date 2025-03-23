@@ -55,10 +55,10 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       
       - name: Build the Package
-        run: docker build -t asheeshkumarsingh07/inference:latest .
+        run: docker build -t asheeshkumarsingh07/ketan:latest .
 
       - name: Push the Package
-        run: docker push asheeshkumarsingh07/inference:latest
+        run: docker push asheeshkumarsingh07/ketan:latest
 
   pull-and-start-app:
     name: Continuous Deployment
@@ -72,7 +72,7 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Pull Package
-        run: sudo docker pull asheeshkumarsingh07/inference:latest
+        run: sudo docker pull asheeshkumarsingh07/ketan:latest
 
       - name: Remove Already Running Container
         run: |
@@ -83,6 +83,6 @@ jobs:
 
       - name: Run Docker Image to serve users
         run: |
-          docker run -d --name=inference -p 8080:8000 asheeshkumarsingh07/inference:latest
+          docker run -d --name=inference -p 8080:8000 asheeshkumarsingh07/ketan:latest
 
 
